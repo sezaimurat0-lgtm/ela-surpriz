@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<title>Bir Hikâyenin Başlangıcı | Ela</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#050505;
+ color:white;
+ font-family:Georgia,serif;
+ overflow:hidden;
+}
+.screen{
+ position:fixed;
+ inset:0;
+ display:none;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:28px 22px;
+ background:radial-gradient(ellipse at center,#21090e,#0a0507 55%,#030303);
+ overflow-y:auto;
+}
+.screen.active{display:flex;animation:appear 1s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.small{
+ color:#a9a0a0;
+ font:11px Arial,sans-serif;
+ letter-spacing:5px;
+ text-transform:uppercase;
+ margin-bottom:22px;
+}
+h1{
+ font-size:clamp(38px,11vw,65px);
+ letter-spacing:5px;
+ margin:10px 0;
+ line-height:1.2;
+}
+h2{font-size:clamp(24px,7vw,36px);margin:12px 0}
+.red{
+ color:#e83b4d;
+ text-shadow:0 0 12px #b51629,0 0 35px #6d0917;
+}
+p{
+ font-size:17px;
+ line-height:1.9;
+ color:#d5cccc;
+ max-width:440px;
+}
+button{
+ border:1px solid #a72a39;
+ background:linear-gradient(135deg,#7e101f,#bd2538);
+ color:white;
+ border-radius:3px;
+ padding:15px 28px;
+ margin-top:28px;
+ font-size:14px;
+ letter-spacing:2px;
+ cursor:pointer;
+ box-shadow:0 0 24px #64101b66;
+}
+button:active{transform:scale(.96)}
+.rule{
+ width:55px;
+ height:1px;
+ background:#d43a4b;
+ margin:20px auto;
+ box-shadow:0 0 12px #ff3045;
+}
+.letter{
+ max-width:470px;
+ width:100%;
+ padding:25px 20px;
+ border:1px solid #57202a;
+ background:linear-gradient(145deg,#170b0d,#080707);
+ box-shadow:0 0 35px #7e152433;
+}
+.letter p{font-size:16px}
+.number{
+ font:12px Arial,sans-serif;
+ color:#a64b57;
+ letter-spacing:4px;
+ margin-bottom:20px;
+}
+.heart{
+ position:fixed;
+ bottom:-30px;
+ color:#d92840;
+ pointer-events:none;
+ z-index:5;
+ animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 15%{opacity:.7}
+ 100%{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+.faint{
+ color:#776d6f;
+ font:10px Arial,sans-serif;
+ letter-spacing:3px;
+ margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="screen active" id="s1">
+ <div class="small">SENİN İÇİN HAZIRLANDI</div>
+ <h1>BİR HİKÂYENİN</h1>
+ <h1 class="red">BAŞLANGICI</h1>
+ <div class="rule"></div>
+ <p>Her hikâyenin anlatılmayı bekleyen güzel bir tarafı vardır...</p>
+ <button onclick="go(2)">HİKÂYEMİZİ BAŞLAT</button>
+ <div class="faint">01 — THE BEGINNING</div>
+</section>
+
+<section class="screen" id="s2">
+ <div class="number">SAHNE 01</div>
+ <div class="small">BU HİKÂYENİN BAŞROLÜ</div>
+ <h1 class="red">ELA</h1>
+ <div class="rule"></div>
+ <p>Belki bu sadece küçük bir internet sayfası gibi görünüyor ama içinde sana söylemek istediğim güzel şeyler var.</p>
+ <button onclick="go(3)">DEVAM ET</button>
+</section>
+
+<section class="screen" id="s3">
+ <div class="number">SAHNE 02</div>
+ <div class="small">BAZI İNSANLAR...</div>
+ <h2>GÜZEL BİR TESADÜFTÜR</h2>
+ <div class="rule"></div>
+ <p>Seninle konuşmak, günümün içinde güzel bir an oluyor. Bazen küçücük bir mesajın bile yüzümü güldürmeye yetiyor.</p>
+ <button onclick="go(4)">BİR SONRAKİ SAHNE</button>
+</section>
+
+<section class="screen" id="s4">
+ <div class="number">SAHNE 03</div>
+ <div class="small">SANA SÖYLEMEK İSTEDİĞİM</div>
+ <h2 class="red">BİRKAÇ ŞEY VAR...</h2>
+ <div class="rule"></div>
+ <p>Her sohbetimizin, her güzel anımızın bende ayrı bir yeri var. İyi ki tanımışım seni Ela.</p>
+ <button onclick="go(5)">MEKTUBUNU AÇ</button>
+</section>
+
+<section class="screen" id="s5">
+ <div class="number">SAHNE 04 — SANA ÖZEL</div>
+ <div class="letter">
+  <div class="small">KÜÇÜK BİR MEKTUP</div>
+  <h2 class="red">ELAM...</h2>
+  <div class="rule"></div>
+  <p>
+   Belki sana her zaman anlatamıyorum ama hayatımda olman benim için gerçekten güzel.
+   <br><br>
+   Seninle konuştuğum anlar, paylaştığımız güzel şeyler benim için kıymetli.
+   <br><br>
+   Bu küçük sürprizi hazırlarken tek istediğim yüzünde güzel bir tebessüm oluşturabilmekti.
+   <br><br>
+   İyi ki varsın. ❤️
+  </p>
+  <h2 class="red">♥</h2>
+ </div>
+ <button onclick="go(6)">SON SAHNEYE GEÇ</button>
+</section>
+
+<section class="screen" id="s6">
+ <div class="number">SON SAHNE — AMA SON DEĞİL</div>
+ <div class="small">BU ŞARKI İKİMİZE...</div>
+ <h1 class="red">BİZİM</h1>
+ <h1>ŞARKIMIZ</h1>
+ <div class="rule"></div>
+ <h2>Cevher</h2>
+ <h2 class="red">ÖZELİM ❤️</h2>
+ <p>Bu şarkıyı her duyduğunda bu küçük sürprizi hatırla. Senin için hazırladım Ela.</p>
+ <button onclick="openSong()">ŞARKIMIZI DİNLE ♫</button>
+ <div class="faint">THE END? NO. JUST THE BEGINNING.</div>
+ <div class="faint">SENİN İÇİN ❤️</div>
+</section>
+
+<script>
+let current=1;
+
+function go(n){
+ document.getElementById("s"+current).classList.remove("active");
+ current=n;
+ document.getElementById("s"+current).classList.add("active");
+ createHearts(9);
+}
+
+function createHearts(amount){
+ for(let i=0;i<amount;i++){
+  setTimeout(()=>{
+   const heart=document.createElement("div");
+   heart.className="heart";
+   heart.textContent=Math.random()>.5?"♥":"♡";
+   heart.style.left=Math.random()*100+"vw";
+   heart.style.fontSize=(14+Math.random()*17)+"px";
+   heart.style.animationDuration=(5+Math.random()*4)+"s";
+   document.body.appendChild(heart);
+   setTimeout(()=>heart.remove(),9500);
+  },i*150);
+ }
+}
+
+function openSong(){
+ const url="https://www.youtube.com/results?search_query=Cevher%20%C3%96zelim";
+ window.location.href=url;
+}
+
+setInterval(()=>createHearts(2),3000);
+</script>
+
+</body>
+</html>
